@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const controller = require("../controllers/usersController");
+const controller = require("../controllers/rolesController");
 
 router.post("/", controller.create);
 router.get("/", controller.getAll);
@@ -8,7 +8,6 @@ router.get("/:id", controller.getById);
 router.put("/:id", controller.update);
 router.delete("/:id", controller.delete);
 
-router.post("/enable", controller.enable);
-router.post("/disable", controller.disable);
+router.get("/:id/users", controller.getUsersByRole);
 
 module.exports = router;
